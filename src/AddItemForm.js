@@ -1,3 +1,5 @@
+import pokeBall from "./img/pokeBall.png";
+console.log(pokeBall);
 // 1. Step: AddItemForm als Komponente erstellen
 export default function AddItemForm({ countItem, onAddItem }) {
   // 3. Nimmt den Value aus dem Input Field
@@ -28,7 +30,9 @@ export default function AddItemForm({ countItem, onAddItem }) {
       </label>
       <br />
       <input type="text" name="name" id="name" />
-      <button>Add Item</button>
+      <button className="addButton">
+        <image src={"pokeBall"}></image>
+      </button>
     </form>
   );
 }

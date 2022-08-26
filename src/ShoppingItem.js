@@ -9,4 +9,3 @@ export default function ShoppingItem({ id, name, onRemoveItem }) {
     </li>
   );
 }
-

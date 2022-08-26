@@ -1,5 +1,29 @@
+@font-face {
+  font-family: "pokemon";
+  src: local("PokemonFont"),
+  url("./fonts/PokemonFont.ttf") format("truetype");
+}
+
 .App {
+  font-family: "pokemon";
+  background: ;
+}
+header {
   text-align: center;
+ 
+}
+
+form {
+  text-align: left;
+}
+ul {
+  list-style-type: none;
+}
+
+.addButton {
+  width: 100px;
+  height: 100px;
+background-image: url(./img/pokeBall.png);
 }
 
 .App-header {
