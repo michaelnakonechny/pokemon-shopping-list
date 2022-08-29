@@ -1,7 +1,8 @@
+import { nanoid } from "nanoid";
 import pokeBall from "./img/pokeBall.png";
 console.log(pokeBall);
 // 1. Step: AddItemForm als Komponente erstellen
-export default function AddItemForm({ countItem, onAddItem }) {
+export default function AddItemForm({ onAddItem }) {
   // 3. Nimmt den Value aus dem Input Field
   function handleSubmit(event) {
     // Formular nicht ins Nirvana schicken
@@ -12,7 +13,7 @@ export default function AddItemForm({ countItem, onAddItem }) {
     // "addItem" => {id: 1234, name: "addItem"}
 
     // 4. Object erstellen mit allen Informationen, die ein Todo benötigt
-    const addItem = { id: countItem + 1, name: inputValue };
+    const addItem = { id: nanoid(), name: inputValue };
 
     // 5. Rufe die Funktonen aus, die uns als Prop mitgegeben wurde
     // und übergebe das newTodo

@@ -27,6 +27,7 @@ function App() {
   }
 
   function removeItem(id) {
+    console.log(id);
     setShoppingList(
       shoppingList.filter((ShoppingItem) => ShoppingItem.id !== id)
     );
@@ -39,7 +40,7 @@ function App() {
       <header className="App-header">
         <h1> Pokemon Shopping List </h1>
       </header>
-      <AddItemForm countItem={shoppingList.length} onAddItem={addItem} />
+      <AddItemForm onAddItem={addItem} />
       <ul>
         {shoppingList.map((shopping) => (
           <ShoppingItem
