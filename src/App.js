@@ -1,7 +1,7 @@
 import "./App.css";
 import ShoppingItem from "./ShoppingItem";
 import AddItemForm from "./AddItemForm";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./fonts/PokemonFont.ttf";
 
 const initialData = [
@@ -14,8 +14,17 @@ const initialData = [
 
 function App() {
   // SET USE STATE
-
-  const [shoppingList, setShoppingList] = useState(initialData);
+  const [shoppingList, setShoppingList] = useState(loadFromLocal() || initialData);
+  
+  useEffect(() => {
+    localStorage.setItem('_initialData', JSON.stringify(shoppingList));
+  }, [shoppingList]);
+  
+  function loadFromLocal() {
+    return JSON.parse(localStorage.getItem('_initialData'));
+  }
+  
+  //const [shoppingList, setShoppingList] = useState(initialData);
   console.log(shoppingList);
   // 6. addTodo wird mit dem neuen Todo aufgerufen
   function addItem(newItem) {
