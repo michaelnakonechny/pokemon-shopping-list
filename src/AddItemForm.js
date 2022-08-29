@@ -30,9 +30,7 @@ export default function AddItemForm({ countItem, onAddItem }) {
       </label>
       <br />
       <input type="text" name="name" id="name" />
-      <button className="addButton">
-        <image src={"pokeBall"}></image>
-      </button>
+      <button className="addButton"> </button>
     </form>
   );
 }
