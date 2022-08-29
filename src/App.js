@@ -2,6 +2,7 @@ import "./App.css";
 import ShoppingItem from "./ShoppingItem";
 import AddItemForm from "./AddItemForm";
 import { useState } from "react";
+import "./fonts/PokemonFont.ttf";
 
 const initialData = [
   { name: "Potion", id: "1" },
@@ -15,7 +16,7 @@ function App() {
   // SET USE STATE
 
   const [shoppingList, setShoppingList] = useState(initialData);
-console.log(shoppingList)
+  console.log(shoppingList);
   // 6. addTodo wird mit dem neuen Todo aufgerufen
   function addItem(newItem) {
     // 7. Neue State: Für das neue Todo an den Anfang
@@ -26,9 +27,11 @@ console.log(shoppingList)
   }
 
   function removeItem(id) {
-    setShoppingList(shoppingList.filter((ShoppingItem) => ShoppingItem.id !== id));
+    setShoppingList(
+      shoppingList.filter((ShoppingItem) => ShoppingItem.id !== id)
+    );
   }
-console.log(removeItem);
+  console.log(removeItem);
   // SET USE STATEEND
 
   return (
@@ -39,7 +42,12 @@ console.log(removeItem);
       <AddItemForm countItem={shoppingList.length} onAddItem={addItem} />
       <ul>
         {shoppingList.map((shopping) => (
-          <ShoppingItem id={shopping.id} key={shopping.id} name={shopping.name} onRemoveItem={removeItem}/>
+          <ShoppingItem
+            id={shopping.id}
+            key={shopping.id}
+            name={shopping.name}
+            onRemoveItem={removeItem}
+          />
         ))}
       </ul>
     </div>

@@ -3,9 +3,11 @@ export default function ShoppingItem({ id, name, onRemoveItem }) {
     <li>
       <label>
         <input type="checkbox" />
-        {name}
+        <span>{name}</span>
       </label>
-      <button onClick={() => onRemoveItem(id)}>Remove</button>
+      <button className="removeButton" onClick={() => onRemoveItem(id)}>
+        {" "}
+      </button>
     </li>
   );
 }
